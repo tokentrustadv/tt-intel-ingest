@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+
+# Chatbase exports contain real client session data (portfolio holdings,
+# dollar amounts, etc.) — this repo is public, never let these get committed.
+*.csv
