@@ -21,7 +21,37 @@ only rows this script skips are structurally broken ones (missing a
 conversation ID, missing timestamps, no messages) — not a re-derivation of
 "unfinished" or "test" rules.
 
-## Setup
+## Setup — GitHub Codespaces (recommended if you don't have a terminal, e.g. Chromebook)
+
+One-time setup:
+
+1. On this repo's GitHub page: **Code → Codespaces → Create codespace on
+   `main`** (or whichever branch you're on). This opens a full Linux terminal
+   in your browser with Python already installed — nothing to install on the
+   Chromebook itself.
+2. Add your Supabase credentials as **Codespaces secrets** so you never have
+   to create a `.env` file by hand: on GitHub, go to **Settings → Secrets and
+   variables → Codespaces** (repo settings, or your account settings to make
+   them available to all your codespaces) and add:
+   - `SUPABASE_URL` = `https://xsdgornnyrczvacfwgac.supabase.co`
+   - `SUPABASE_SERVICE_KEY` = the service_role secret (Supabase Project
+     Settings → API)
+
+   These get injected automatically into every codespace for this repo — set
+   once, done forever.
+3. The codespace runs `pip install -r requirements.txt` automatically on
+   creation (see `.devcontainer/devcontainer.json`).
+
+Each time you have a new export:
+
+1. Export the CSV from Chatbase on your Chromebook (as today).
+2. Open (or resume) the codespace from the repo's **Code → Codespaces** menu.
+3. Drag the CSV file from your Downloads into the file tree on the left side
+   of the codespace window to upload it.
+4. In the terminal at the bottom, run the commands under **Usage** below,
+   using the uploaded file's name as the path (e.g. `export.csv`).
+
+## Setup — local machine
 
 ```bash
 pip install -r requirements.txt
